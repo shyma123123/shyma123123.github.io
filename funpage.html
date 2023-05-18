@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Glance</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="gameStyle.css">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+
+ 
+  th, td {
+  padding: 15px;
+}
+
+</style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+  <script>
+    $(document).ready(function(){
+        // Initialize Tooltip
+        $('[data-toggle="tooltip"]').tooltip(); 
+        
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+      
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+      
+            // Prevent default anchor click behavior
+            event.preventDefault();
+      
+            // Store hash
+            var hash = this.hash;
+      
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 900, function(){
+         
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+      })
+      </script>
+      <!--the code for the navigation bar--> 
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#myPage">Logo</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="Books.html">Books</a></li>
+          <li><a href="Register.html">Register</a></li>
+          <li><a href="funpage.html">Game</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Articles
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="BestSellerBooks.html">Best sellers</a></li>
+              <li><a href="BestNonFictionBooks.html">Best nonfiction</a></li>
+            </ul>
+          </li>
+          <li><a href="calculations.html">cart</a></li>
+          <li><a href="questionnaire.html">Questionnaire</a></li>
+
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div style="float: left;">
+
+  <table id="table" border="solid" style="border-radius: 50%; border-width: thick; background-color: lightgreen; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: larger;">
+<thead >
+  <tr><th>attempt</th><th>false</th></tr>
+</thead>
+<tbody id="tbody"></tbody>
+  </table>
+</div>
+
+    <div class="wrapper"><!--Outer box for the game -->
+      <ul class="cards"><!-- a box that will hold the general design of the cards -->
+        <li class="card"><!-- this boc will hold one card and will have it's format from the back and from the inside -->
+          <div class="view front-view">
+            <!--card from the front-->
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <!--card from the inside-->
+          <div class="view back-view">
+            <img src="images/img_4.jpg">
+          </div>
+        </li>
+        <li class="card"><!--this is the second card-->
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_8.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_9.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_4.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_7.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_9.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_8.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_6.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_7.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_6.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_5.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_10.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_5.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_10.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_11.jpg" alt="card-img">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view">
+            <img src="images/book_logo_5.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="images/img_11.jpg" alt="card-img">
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+    <script src="script.js"></script><!--calling the javascrip file that is holding the method of the game and how ti interact with the user-->
+    
+
+  </body>
+</html>

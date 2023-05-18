@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Cart Calculator</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			background-color: #f2f2f2;
+		}
+		
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+		
+		form {
+			background-color: #fff;
+			border-radius: 5px;
+			padding: 20px;
+			width: 400px;
+			margin: 0 auto;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+		
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		
+		input[type="submit"] {
+			background-color: #333;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			margin-top: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 100%;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #555;
+		}
+	</style>
+</head>
+<body  data-spy="scroll" data-target=".navbar" data-offset="50">
+  <script>
+    $(document).ready(function(){
+        // Initialize Tooltip
+        $('[data-toggle="tooltip"]').tooltip(); 
+        
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+      
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+      
+            // Prevent default anchor click behavior
+            event.preventDefault();
+      
+            // Store hash
+            var hash = this.hash;
+      
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 900, function(){
+         
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+      })
+      </script>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#myPage">Logo</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="Books.html">Books</a></li>
+          <li><a href="Register.html">Register</a></li>
+          <li><a href="funpage.html">Game</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Articles
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="BestSellerBooks.html">Best sellers</a></li>
+              <li><a href="BestNonFictionBooks.html">Best nonfiction</a></li>
+            </ul>
+          </li>
+		  <li><a href="calculations.html">cart</a></li>
+		  <li><a href="questionnaire.html">Questionnaire</a></li>
+
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<pre>
+
+
+
+
+
+</pre>
+	<h1>Bill Calculator</h1>
+	<form id="billForm">
+		<label for="item1">Item 1:</label>
+		<input type="number" name="item1" id="item1" min="0" step="0.01" required>
+		
+		<label for="item2">Item 2:</label>
+		<input type="number" name="item2" id="item2" min="0" step="0.01" required>
+		
+		<label for="item3">Item 3:</label>
+		<input type="number" name="item3" id="item3" min="0" step="0.01" required>
+		
+		<label for="age">Your age:</label>
+		<input type="number" name="age" id="age" min="0" required>
+		
+		<input type="submit" value="Calculate">
+	</form>
+	
+	<script>
+		// get the form element
+		var billForm = document.getElementById('billForm');
+		
+		// add an event listener to the form's submit event
+		billForm.addEventListener('submit', function(event) {
+			// prevent the default form submission behavior
+			event.preventDefault();
+			
+			// get the values of the form fields
+			var item1 = parseFloat(document.getElementById('item1').value);
+			var item2 = parseFloat(document.getElementById('item2').value);
+			var item3 = parseFloat(document.getElementById('item3').value);
+			var age = parseInt(document.getElementById('age').value);
+			
+			// calculate the total cost
+			var total = item1 + item2 + item3;
+			
+			// check if the user is eligible for a discount
+			if (age >= 60) {
+				// apply a 10% discount
+				total = total * 0.9;
+			}
+			
+			// display the total cost to the user
+			alert('Your total bill is $' + total.toFixed(2));
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Questionnaire</title>
+	
+<script type="text/Javascript">
+
+    function validateForm() {//  create objects  for function of  validation
+        var email = document.getElementById("email").value;
+        var age = document.getElementById("age").value;
+        var day = document.getElementById("day").value;
+    
+        if (email == "") {//check for input of email if it is available
+          alert("place enter your email");
+          return false;
+        }
+      
+        if(email.indexOf("@", 0) < 0) {//use can use pattern search
+                alert("Please enter a valid e-mail address.");
+                 return false;
+          }
+      if(email.indexOf(".", 0) < 0) {//use can use pattern search
+                 alert("Please enter a valid e-mail address.");
+                 return false;
+          }
+    
+    
+       if (age == "") {// check for input of age if it is available
+          alert("place enter the answer(age)");
+          age.focus();
+          return false; 
+      
+        }
+    
+    
+        //Using pattern search to make sure that age has digits only
+        // and determine range to make sure the age in between (1- 99)
+       //otherwise display error message 
+      if((age.search(/\D/) != -1 ) || (age<0 || age>100)) { 
+            alert("Incorrect age");
+             return false;}
+    
+       
+    if (day == "") {// check for input of day if it is available
+          alert("place enter the answer(hour/s)");
+          return false;
+    }
+      } 
+        </script>
+
+  <style type="text/css">
+      body {
+          background-color: black;
+          background-size: auto;
+          height: outo;
+
+      }
+
+      .parent {
+         background: linear-gradient(to right, rgb(146, 145, 144), rgb(247, 246, 244));
+         color: black;
+          width: 700px;
+          height: 900px;
+          margin: 50px auto;
+          border-radius: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      h1 {
+          text-align: center;
+          position: relative;
+          top: 50px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+      }
+
+      .cont {
+         text-align: left;
+         margin-left: 50px;
+      }
+
+
+      #email {
+          height: 21px;
+          width: 240px;
+
+      }
+
+      #age {
+          height: 21px;
+          width: 80px;
+      }
+
+      #day {
+          height: 21px;
+          width: 130px;
+      }
+
+      label {
+
+          font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+
+      }
+      .submit{
+          margin-top: 50px;
+          width: 100px;
+          height: 40px;
+          background-color: white;
+          color: black;
+          font-size: medium;
+          font-weight: bold;
+      
+      }
+  </style>
+</head>
+<!------------------------------ Header ------------------------------>
+
+<body  data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+<h1 style=" font-size: 300%;">Questionnaire</h1>
+<br /><br />
+    <script>
+      $(document).ready(function(){
+          // Initialize Tooltip
+          $('[data-toggle="tooltip"]').tooltip(); 
+          
+          // Add smooth scrolling to all links in navbar + footer link
+          $(".navbar a, footer a[href='index.html']").on('click', function(event) {
+        
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+        
+              // Prevent default anchor click behavior
+              event.preventDefault();
+        
+              // Store hash
+              var hash = this.hash;
+        
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 900, function(){
+           
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
+        })
+        </script>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="#myPage">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="Books.html">Books</a></li>
+            <li><a href="Register.html">Register</a></li>
+            <li><a href="funpage.html">Game</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Articles
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="BestSellerBooks.html">Best sellers</a></li>
+                <li><a href="BestNonFictionBooks.html">Best nonfiction</a></li>
+              </ul>
+            </li>
+            <li><a href="calculations.html">cart</a></li>
+            <li><a href="questionnaire.html">Questionnaire</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  <pre>
+  
+  
+  
+  
+      </pre>
+   
+  <div class="parent">
+    
+      <div class="cont">
+        <br /><br />
+        
+
+          <form action="http://localhost/que.php"  method="post" id="myForm">
+              <label for="email">Please enter your email: </label>
+              <input type="text" id="email" name="em" placeholder="Enter your email">
+              <br /><br />
+
+              <br /><br />
+              <label> Have you ever seen an idea similar to this website?</label>
+              <input name="rad2" type="radio"  value="yes">yes
+              <input name="rad2" type="radio" value="No">No
+              <br /><br />
+              <br /><br />
+
+              <label> How was the reading via the site?</label>
+              <input name="rad" type="radio"  value="bad"> bad
+              <input name="rad" type="radio" value="good"> good
+              <input name="rad" type="radio" value="very good"> very good
+              <br /><br />
+              <br /><br />
+
+              <label for="age">In your opinion, what is the appropriate age to start registering on our site?</label>
+              <input type="text" placeholder="years old" id="age" name="ag">
+              <br /><br />
+              <br /><br />
+
+              <label for="day">
+                  How long did the book take to read  (hours)?</label>
+              <input type="text" placeholder="one word" id="day" name="da">
+              <br /><br />
+
+              <label>which kind did you like more:</label> <br />
+              <input type="checkbox" class="check" name="sections[]" value="borrowing section"><label>Adventure</label> <br />
+              <input type="checkbox" class="check" name="sections[]" value="E-books"><label>Thriller</label> <br />
+              <input type="checkbox" class="check" name="sections[]" value="fun page"><label>Romantic</label> <br />
+              <input type="checkbox" class="check" name="sections[]" value="Suggestions"><label>Comedy</label> <br />
+              <br /><br />
+              <div>
+
+                  <input type="submit" name="submit" class="submit">
+              </div>
+
+          </form>
+
+      </div>
+
+  </div>
+
+</body>
+<script type="text/javascript">
+
+  document.getElementById("myForm").onsubmit = validateForm;
+ // document.getElementById("email").onblur = validateForm;
+
+</script>
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+
+<footer>
+  <div class="bottom1">
+      <br>
+      <p> &copy; 2023 Designed by Shaima, Waad,  Khadeja</p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

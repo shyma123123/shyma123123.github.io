@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('#submit').click(function() { // bind click event to submit button
+        var email = $('#email').val();
+        var age = $('#age').val();
+        var day = $('#day').val();
+        
+        if (email == "") {
+          alert("Please enter your email.");
+          return false;
+        }
+        
+        if (email.indexOf("@") < 0 || email.indexOf(".") < 0) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+        
+        if (age == "") {
+          alert("Please enter your age.");
+          return false;
+        }
+        
+        if (!/^\d+$/.test(age) || age < 1 || age > 99) {
+          alert("Please enter a valid age between 1 and 99.");
+          return false;
+        }
+        
+        if (day == "") {
+          alert("Please enter your answer (hour/s).");
+          return false;
+        }
+      });
+    });
+  </script>
+  
+
+  <style type="text/css">
+      body {
+          background-image:url(b.jpg);
+          background-size: auto;
+          height: outo;
+
+      }
+
+      .parent {
+         background: linear-gradient(to right, rgb(187, 185, 180), rgb(90, 88, 84));
+          width: 700px;
+          height: 700px;
+          margin: 50px auto;
+          border-radius: 20px;
+
+      }
+
+      h1 {
+          text-align: center;
+          position: relative;
+          top: 50px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+      }
+
+      .cont {
+         text-align: left;
+         margin-left: 50px;
+      }
+
+
+      #email {
+          height: 21px;
+          width: 240px;
+
+      }
+
+      #age {
+          height: 21px;
+          width: 80px;
+      }
+
+      #day {
+          height: 21px;
+          width: 130px;
+      }
+
+      label {
+
+          font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+
+      }
+      .submit{
+          margin-top: 50px;
+          width: 100px;
+          height: 40px;
+          background-color: white;
+          color: black;
+          font-size: medium;
+          font-weight: bold;
+      
+      }
+  </style>
+</head>
+<!------------------------------ Header ------------------------------>
+
+<h1 style=" font-size: 300%;">Quetionnaire</h1>
+<br /><br />
+<body>
+   
+  <div class="parent">
+    
+      <div class="cont">
+        <br /><br />
+        
+
+          <form action="http://localhost/que.php"  method="post" id="myForm">
+              <label for="email">Please enter your email: </label>
+              <input type="text" id="email" name="em" placeholder="Enter your email">
+              <br /><br />
+
+              <br /><br />
+              <label> Have you ever seen an idea similar to this website?</label>
+              <input name="rad2" type="radio"  value="yes">yes
+              <input name="rad2" type="radio" value="No">No
+              <br /><br />
+              <br /><br />
+
+              <label> How was the reading via the site?</label>
+              <input name="rad" type="radio"  value="bad"> bad
+              <input name="rad" type="radio" value="good"> good
+              <input name="rad" type="radio" value="very good"> very good
+              <br /><br />
+              <br /><br />
+
+              <label for="age">In your opinion, what is the appropriate age to start registering on our site?</label>
+              <input type="text" placeholder="years old" id="age" name="ag">
+              <br /><br />
+              <br /><br />
+
+              <label for="day">
+                  How long did the book take to read  (hours)?</label>
+              <input type="text" placeholder="one word" id="day" name="da">
+              <br /><br />
+
+              <label>which kind did you like more:</label> <br />
+              <input type="checkbox" class="check" name="sections[]" value="borrowing section"><label>Adventure</label> <br />
+              <input type="checkbox" class="check" name="sections[]" value="E-books"><label>Thriller</label> <br />
+              <input type="checkbox" class="check" name="sections[]" value="fun page"><label>Romantic</label> <br />
+              <input type="checkbox" class="check" name="sections[]" value="Suggestions"><label>Comedy</label> <br />
+              <br /><br />
+              <div>
+
+                  <input type="submit" name="submit" class="submit">
+              </div>
+
+          </form>
+
+      </div>
+
+  </div>
+
+</body>
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+      $('#myForm').submit(function() { // bind submit event to form
+        if (!validateForm()) {
+          return false;
+        }
+      });
+      
+      // bind blur event to email field
+      $('#email').blur(function() {
+        validateForm();
+      });
+    });
+  </script>
+  
+
+<footer>
+  <div class="bottom1">
+      <br>
+      <p> &copy; 2023 Designed by Shaima, Waad, Khadeja</p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
